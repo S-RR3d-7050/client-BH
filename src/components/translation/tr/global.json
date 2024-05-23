@@ -1,0 +1,174 @@
+{
+    "nav" : {
+        "searchBox" : "Burada ara",
+        "stu" : "Öğrenci",
+        "admin" : "Yönetici",
+        "supe" : "Gözetmen",
+        "cood" : "Koordinatör",
+        "en" : "İngilizce",
+        "tr" : "Türkçe",
+        "prof" : "Profil",
+        "logout" : "Çikiş Yap",
+        "fr": "Francais"
+
+    },
+    "sidebar" : {
+        "home" : "Gösterge Paneli",
+        "prof" : "Profil",
+        "internships" : "Stajlar",
+        "applications" : "Başvuru",
+        "logbook" : "Seyir defteri",
+        "docs": "Belgeler",
+        "reports" : "Raporlar",
+        "settings" : "Ayarlar"
+    },
+    "main" : {
+        "message" : "Seyir Defteri Girişleri",
+        "typeWelcome" : "Bir hesap türü seçin.",
+        "form" : "Formu",
+        "info" : "Bilgi",
+        "new" : "Yeni",
+        "add" : "Eklemek"
+    }, 
+    "calendar" : {
+        "cal" : "Takvim",
+        "monday" : "Paz",
+        "tuesday" : "Sal",
+        "wednesday" : "Çar",
+        "thursday" : "Per",
+        "friday" : "Cuma",
+        "saturday" : "Cum",
+        "sunday" : "Pazar",
+        "Jan" : "Ocak",
+        "Feb" : "Şubat",
+        "Mar" : "Mart",
+        "Apr" : "Nisan",
+        "May" : "Mayis",
+        "Jun" : "Haziran",
+        "Jul" : "Temmuz",
+        "Aug" : "Ağustos",
+        "Sep" : "Eylül",
+        "Oct" : "Ekim",
+        "Nov" : "Kasim",
+        "Dec" : "Aralik"
+    },
+    "events" : {
+        "upcoming" : "Yaklaşan Etkinlikler"
+    },
+    "announcements" : {
+        "title" : "Duyurular",
+        "noData" : "Henüz Duyuru Yok",
+        "message" : "Staj sorumlusu veya koordinatör tarafindan yapilan tüm duyurular buradan görüntülenebilir."
+    },
+    "docManager" : {
+        "title" : "Doküman Yöneticisi",
+        "uploadFile" : "Dosyalari yükle",
+        "message" : "Dokümanlar yöneticide saklanabilir ve erişilebilir"
+    },
+    "resLibrary" : {
+        "title" : "Kaynak kütüphanesi",
+        "message" : "Süpervizör/koordinatör tarafindan yüklenen tüm eğitim kaynaklarina buradan ulaşilabilir."
+    },
+    "perfTracker" : {
+        "title" : "Performans Takipçisi"
+    },
+    "logbook" : {
+        "title" : "Günlük",
+        "view" : "Görüş Günlük",
+        "add" : "Yeni Günlük",
+        "day" : "Gün",
+        "date" : "Tarih",
+        "department" : "Departman",
+        "description" : "Tanim",
+        "descLabel" : "Yapilan işin açiklamasi",
+        "desc" : "Yapilan işin veya işin kisa bir açiklamasi buraya girilir.",
+        "download": "Dergiyi İndir"
+    },
+    "log" : {
+        "logout" : "Çikiş Yap"
+    },
+    "confirmation" : {
+        "yes" : "Evet",
+        "no" : "Hayir",
+        "edit" : "Düzenlemek",
+        "del" : "Silmek",
+        "editMessage" : "Bu günlüğü düzenlemek istediğinizden emin misiniz?",
+        "delMessage" : "Bu günlüğü silmek istediğinizden emin misiniz?",
+        "delSuccess" : "Günlük Başariyla Silindi!",
+        "done" : "Tamam"
+    },
+    "profile" : {
+        "prof" : "Profili",
+        "about" : "Hakkinda",
+        "name" : "İsim",
+        "fname" : "İsim",
+        "lname" : "Soyisim",
+        "companyName" : "Firma Adi",
+        "email" : "Email",
+        "stdNo" : "Öğrenci Numarasi",
+        "saveBtn" : "Bilgileri Güncelle",
+        "edit" : " Düzenle",
+        "success" : "Kullanici Profili başariyla güncellendi",
+        "imgWarning" : "Büyük resimler otomatik olarak yeniden boyutlandirilabilir. Maksimum yükleme boyutu 1 MB'tir"
+    },
+    "application" : {
+        "apps" : "Uygulamalar",
+        "form" : "Basvuru Formu",
+        "view" : "Görüş Basvuru",
+        "stuInfo" : "Ogrenci Bilgi",
+        "companyInfo" : "Şirket Bilgileri",
+        "tel" : "Telephon",
+        "dur" : "Süre",
+        "accept": "Kabul Etmek",
+        "reject" : "Reddetmek",
+        "submit" : "Başvuruyu Gönder",
+        "trnc" : "KKTC",
+        "insurDownload" : "Sigorta Formunu İndirin",
+        "trncStu" : "KKTC/Türkiye'deki şirketlere başvuran öğrencilerin bu ülkelerin mevzuatlarina göre başvuru formuyla birlikte Sosyal Sigorta Formunu da doldurup göndermeleri gerekmektedir."
+    },
+    "internships" : {
+        "apply" : "Uygula",
+        "intInfo" : "Staj Bilgileri",
+        "avail" : "Mevcut Stajlar",
+        "ong" : "Devam Eden Stajlar",
+        "compl" : "Tamamlanan Stajlar",
+        "start" : "Başlangiç",
+        "end" : "Bitirmek",
+        "company" : "Şirket",
+        "country" : "Ülke",
+        "city" : "Şehir",
+        "role" : "Rol",
+        "year" : "Yil",
+        "dur" : "Süre",
+        "desc" : "Tanim",
+        "field" : "Çalişma Alani",
+        "pos" : "Konum",
+        "stat" : "Durum",
+        "actInt" : "Aktif Stajyer",
+        "noData" : "Bu kullanici hesabi için önceki staj verileri mevcut değil"
+    },
+    "eval" : {
+        "eval" : "Değerlendirme",
+        "supe" : "Süpervizör Değerlendirmesi",
+        "cood" : "Koordinatör Değerlendirmesi",
+        "crit" : "Değerlendirmesi Kriterleri",
+        "poor" : "Fakir",
+        "fair" : "Adil",
+        "good" : "Iyi",
+        "submit" : "Gönder",
+        "unsat" : "Yetersiz",
+        "sat" : "Yeterli",
+        "exc" : "Mükemmel",
+        "int" : "İlgi",
+        "attend" : "Katilim",
+        "techKnow" : "Teknik bilgi ve Yetenek",
+        "genBhv" : "Genel Davraniş",
+        "overall" : "Genel Değerlendirme Sonucu",
+        "summary" : "Özet",
+        "comm" : "Yorumlar"
+    }
+
+
+
+
+}

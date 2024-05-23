@@ -1,0 +1,16 @@
+.res {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 29%;
+    padding: 0.5rem;
+    background-color: #103561;
+}
+
+.res > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 65%;
+}

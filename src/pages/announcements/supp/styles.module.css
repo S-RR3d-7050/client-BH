@@ -1,0 +1,9 @@
+.announcements {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    height: auto;
+    min-height: 90vh;
+    width: 80vw;
+    /* outline: 1px solid red; */
+}

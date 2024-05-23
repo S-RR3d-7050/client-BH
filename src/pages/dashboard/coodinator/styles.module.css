@@ -1,0 +1,104 @@
+.overview {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    height: auto;
+    min-height: 90vh;
+    width: 80vw;
+    max-width: 80vw;
+    /* outline: 1px solid red; */
+}
+
+.one {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80vw;
+    height: auto;
+    min-height: 50vh;
+    /* outline: 1px solid red; */
+}
+
+.supes {
+    width: 64%;
+    height: auto;
+    min-height: 50vh;
+    /* outline: 1px solid blue; */
+
+}
+
+.supes > table {
+    width: 98%;
+    margin-left: 0.8rem;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+.supes > table > thead > tr > th  {
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: left;
+    background-color: #103561;
+}
+
+.supes > table > tbody > tr {
+    cursor: pointer;
+}
+
+td {
+    font-size: 15px;
+    font-weight: 450;
+    border: none;
+    padding: 0.4rem;
+    color: #101110BF;
+    background-color: #D9E1EA;
+}
+
+.allSupesLink {
+    font-size: 16px;
+    font-weight: 500;
+    color: #103561;
+    float: right;
+    text-decoration: none;
+
+}
+
+.cal {
+    width: 37%;
+    height: auto;
+    min-height: 50vh;
+    /* outline: 1px solid green; */
+}
+
+
+.two {
+    height: auto;
+    min-height: 40vh;
+    margin: 1rem 0;
+    /* outline: 1px solid red; */
+}
+
+
+.intApps {
+
+}
+
+.intApps > table {
+    width: 90%;
+    margin-left: 0.8rem;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+.intApps > table > thead > tr > th  {
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: left;
+    background-color: #103561;
+}
+
+.intApps > table > tbody > tr {
+    cursor: pointer;
+}

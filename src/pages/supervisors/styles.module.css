@@ -1,0 +1,53 @@
+.main {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    height: auto;
+    min-height: 90vh;
+    width: 80vw;
+    max-width: 80vw;
+    padding-bottom: 1rem;
+    /* outline: 1px solid red; */
+}
+
+.main > table {
+    border: 0px;
+    width: 85%;
+    margin: auto 0 2.5rem 1.5rem;
+    border-collapse: collapse;
+}
+
+.main > table > thead > tr > th  {
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: left;
+    background-color: #103561;
+}
+
+.main > table > tbody > tr {
+    cursor: pointer;
+}
+
+.main > table > tbody > tr:hover {
+    background-color: #000;
+}
+
+td {
+    font-size: 16px;
+    font-weight: 450;
+    border: none;
+    padding: 0.8rem;
+    color: #101110BF;
+    background-color: #D9E1EA;
+}
+
+.addSupe {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    padding: 1rem 3rem;
+    margin: 2rem 1.5rem;
+    border-radius: 16px;
+    background-color: #e2001a;
+}

@@ -1,0 +1,46 @@
+.main {
+    margin-top: 2rem;
+    /* outline: 1px solid red; */
+}
+
+.main > label {
+    display: block;
+    font-size: 16px;
+    color: #103561;
+    margin-bottom: 0.5rem;
+}
+
+.inp {
+    height: 20px;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 18px;
+    width: 90%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 2px 0 rgb(0, 0, 0, 1);
+}
+
+.main > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto;
+}
+
+.checkboxInp {
+    display: inline;
+    
+}
+
+.checkboxLabel {
+    margin-left: 0.5rem;
+}
+
+.main > p {
+    text-align: center;
+}
+
+.main > a {
+    text-align: center;
+}
