@@ -10,6 +10,8 @@ import Paragraph from '../../components/ELEMENTS/Paragraph/Paragraph';
 import Header from '../../components/ELEMENTS/Header/Header';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useParams } from 'react-router-dom';
+import Footer from '../../components/ELEMENTS/Nav/Footer';
+
 
 
 
@@ -118,6 +120,7 @@ const ViewLog = () => {
         </div>
         {editLog && <EditLogMessage />}
         {deleteLog && <DeleteSuccessful />}
+        <Footer />
     </>
     
   )

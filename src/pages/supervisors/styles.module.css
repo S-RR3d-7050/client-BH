@@ -9,7 +9,17 @@
     padding-bottom: 1rem;
     /* outline: 1px solid red; */
 }
-
+.searchBar {
+    font-size: 17px;
+    height: 40px;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 18px;
+    width: 85%;
+    margin: 1rem 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 0 2px 0 rgb(0, 0, 0, 1);
+}
 .main > table {
     border: 0px;
     width: 85%;

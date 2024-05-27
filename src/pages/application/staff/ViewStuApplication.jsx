@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import SIFDownload from './SIFDownload';
 import CoodSidebar from '../../../components/ELEMENTS/Nav/CoodSidebar';
 import { useParams, useNavigate } from 'react-router-dom';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 const ViewStuApplication = () => {
 
@@ -94,25 +96,6 @@ const ViewStuApplication = () => {
         const data = await response.json()
         console.log(data.message);
 
-        // Create an Automatic task for the student
-        /*
-        const url = `http://localhost:5000/api/v1/tasks`;
-        const res = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                title: 'Project Initiation',
-                description: 'Auto Generated Task for Project Initiation',
-                status: 'open',
-                student: application.stagiaire.id,
-                encadrant: ide
-            })
-        });
-        const d = await res.json();
-        console.log(d.message);
-        */
     }
 
     const refuseApplication = async () => {
@@ -258,14 +241,18 @@ const ViewStuApplication = () => {
                 )
             }
             {
-                /*
-            <SIFDownload cv={url+extractFileName(cv?.chemin)} index={url+extractFileName(app?.chemin)}/>
-                    */
+                
+            <SIFDownload cv={cv?.url} index={app?.url}/>
+                    
                 
             }
             <button className={styles.decBtn} style={{background: '#003679'}} onClick={handleClickA()}>{t('application.accept')}</button>
             <button className={styles.decBtn} style={{background: '#ff1a2f'}} onClick={handleClickR()}>{t('application.reject')}</button>
+            <br />
+            <br />
+            <br />
         </section>
+        <Footer />
     </>
   )
 }

@@ -9,6 +9,8 @@ import ApplicationsTable from './ApplicationsTable.jsx'
 import CoodSidebar from '../../../components/ELEMENTS/Nav/CoodSidebar.jsx'
 import Calendar from '../../../components/CONTAINERS/Calendar/Calendar.jsx'
 import { useEffect, useState } from 'react'
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 
 export default function CoodOverview() {
@@ -93,6 +95,7 @@ export default function CoodOverview() {
             </div>
 
         </div>
+        <Footer />
     </>
   )
 }

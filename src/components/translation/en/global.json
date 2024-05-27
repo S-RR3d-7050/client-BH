@@ -203,7 +203,8 @@
         "genBhv" : "General Behaviour",
         "overall" : "Overall Assessment Result",
         "summary" : "Summary",
-        "comm" : "Comments"
+        "comm" : "Comments",
+        "stud" : "Student Evaluation"
     },
     "footer" : {
         "text": "Made with Love",

@@ -9,6 +9,7 @@ import Image from '../../../components/ELEMENTS/Image/Image';
 import { LuTrash } from "react-icons/lu";
 import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
 import { useAuth } from '../../../hooks/AuthProvider';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
 
 
 const SupervisorProfile = () => {
@@ -143,6 +144,7 @@ const SupervisorProfile = () => {
             </div>
         </div>
         {profUpdateSuccess && <ProfUpdateSuccessful />}
+        <Footer />
     </>
   )
 }

@@ -9,6 +9,8 @@ import HeaderTwo from '../../../components/ELEMENTS/Header/HeaderTwo';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 
 const ViewAllApplications = () => {
@@ -21,6 +23,10 @@ const ViewAllApplications = () => {
     const [internships, setInternships] = useState([])
     const [noInt, setNoInt] = useState(false);
     const [noInt2, setNoInt2] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('')
+    const [searchResults, setSearchResults] = useState([])
+    const [searchTerm2, setSearchTerm2] = useState('')
+    const [searchResults2, setSearchResults2] = useState([])
 
 
     // fetch applications
@@ -28,7 +34,16 @@ const ViewAllApplications = () => {
         const res = await fetch('http://localhost:5000/api/v1/demandes-de-stage/etat/EN_ATTENTE')
         const data = await res.json()
         setApplications(data.message)
+        setSearchResults(data.message)
     }
+
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+      };
+
+    const handleSearchChange2 = (e) => {
+        setSearchTerm2(e.target.value);
+      };
 
     /*
     const fetchOngoingApplications = async () => {
@@ -44,6 +59,7 @@ const ViewAllApplications = () => {
         const res = await fetch('http://localhost:5000/api/v1/demandes-de-stage/etat/REFUSEE')
         const data = await res.json()
         setApplicationsRejected(data.message)
+        setSearchResults2(data.message)
         if (data.message.length === 0) {
             setNoInt2(true)
         }
@@ -74,7 +90,7 @@ const ViewAllApplications = () => {
 
 
     // New Applications
-    const displayApplications = applications.map((item, index) =>
+    const displayApplications = searchResults.map((item, index) =>
         <tr key={index} onClick={() => handleTableRowClick(item)}>
             <td>{formatFullName(item.stagiaire.firstName , item.stagiaire.lastName)}</td>
             <td>{item.stagiaire.email}</td>
@@ -127,7 +143,7 @@ const ViewAllApplications = () => {
     )
     */
     // Rejected Internships
-    const displayRejected = applicationsRejected.map((item, index) =>
+    const displayRejected = searchResults2.map((item, index) =>
         <tr key={index}>
           <td>{formatFullName(item.stagiaire.firstName , item.stagiaire.lastName)}</td>
             <td>{item.stagiaire.email}</td>
@@ -162,6 +178,22 @@ const ViewAllApplications = () => {
     }
     , [])
 
+    useEffect(() => {
+        setSearchResults(
+            applications.filter((item) =>
+                item.stagiaire.firstName.toLowerCase().includes(searchTerm) || item.stagiaire.lastName.toLowerCase().includes(searchTerm)
+            )
+            );
+    }, [searchTerm, applications]);
+
+    useEffect(() => {
+        setSearchResults2(
+            applicationsRejected.filter((item) =>
+                item.stagiaire.firstName.toLowerCase().includes(searchTerm2) || item.stagiaire.lastName.toLowerCase().includes(searchTerm2)
+            )
+            );
+    }, [searchTerm2, applicationsRejected]);
+
 
   return (
     <>
@@ -176,6 +208,13 @@ const ViewAllApplications = () => {
                 width={'100%'}
                 margin={'1.5rem 1.5rem'}
             />
+                              <input 
+          type="text"
+          placeholder="Search by Name"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className={styles.searchBar}
+        />
             <div className={styles.availCont}>
                 <table>
                     <thead>
@@ -266,6 +305,13 @@ const ViewAllApplications = () => {
                 width={'100%'}
                 margin={'1.5rem 1.5rem'}
             />
+                              <input 
+          type="text"
+          placeholder="Search by Name"
+          value={searchTerm2}
+          onChange={handleSearchChange2}
+          className={styles.searchBar}
+        />
             <div className={styles.availCont}>
                 <table>
                     <thead>
@@ -295,6 +341,7 @@ const ViewAllApplications = () => {
 
 
         </section>
+        <Footer />
     </>
   )
 }

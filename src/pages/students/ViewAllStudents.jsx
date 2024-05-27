@@ -4,6 +4,8 @@ import CoodSidebar from '../../components/ELEMENTS/Nav/CoodSidebar';
 import Navbar from '../../components/ELEMENTS/Nav/Navbar';
 import HeaderTwo from '../../components/ELEMENTS/Header/HeaderTwo';
 import { useTranslation } from 'react-i18next';
+import Footer from '../../components/ELEMENTS/Nav/Footer';
+
 
 export default function ViewAllStudents() {
   const [students, setStudents] = useState([]);
@@ -82,6 +84,7 @@ export default function ViewAllStudents() {
           </tbody>
         </table>
       </section>
+      <Footer />
     </>
   );
 }

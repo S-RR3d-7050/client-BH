@@ -10,6 +10,8 @@ import { LuTrash } from "react-icons/lu";
 import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
 import CoodSidebar from '../../../components/ELEMENTS/Nav/CoodSidebar';
 import { useAuth } from '../../../hooks/AuthProvider';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 
 const CoodProfile = () => {
@@ -141,6 +143,7 @@ const CoodProfile = () => {
             </div>
         </div>
         {profUpdateSuccess && <ProfUpdateSuccessful />}
+        <Footer />
     </>
   )
 }

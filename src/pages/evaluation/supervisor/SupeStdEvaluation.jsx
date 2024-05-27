@@ -5,6 +5,7 @@ import SupeSidebar from '../../../components/ELEMENTS/Nav/SupeSidebar';
 import { useTranslation } from 'react-i18next';
 import Header from '../../../components/ELEMENTS/Header/Header';
 import { useParams } from 'react-router-dom';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
 
 const SupeStdEvaluation = () => {
     const { id } = useParams();
@@ -153,6 +154,7 @@ const SupeStdEvaluation = () => {
                     <button type='submit' className={styles.submitEvalBtn}>{t('eval.submit') + ' ' + t('eval.eval')}</button>
                 </form>
             </main>
+            <Footer />
         </>
     )
 }

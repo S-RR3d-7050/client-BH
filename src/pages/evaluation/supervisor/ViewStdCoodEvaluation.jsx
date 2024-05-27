@@ -7,6 +7,8 @@ import Header from '../../../components/ELEMENTS/Header/Header';
 import HeaderTwo from '../../../components/ELEMENTS/Header/HeaderTwo';
 // import { FaCheck } from 'react-icons/fa'; // Uncomment this line if you use react-icons
 import { useParams } from 'react-router-dom'
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 
 const ViewStdCoodEvaluation = () => {
@@ -122,6 +124,7 @@ const ViewStdCoodEvaluation = () => {
                     </div>
                 </section>
             </section>
+            <Footer />
         </>
     );
 };

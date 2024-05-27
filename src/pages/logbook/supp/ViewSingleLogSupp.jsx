@@ -8,6 +8,8 @@ import SupeSidebar from '../../../components/ELEMENTS/Nav/SupeSidebar';
 import { useParams } from 'react-router-dom';
 import { use } from 'i18next';
 import { useEffect, useState } from 'react';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 const ViewSingleLogSupp = () => {
 
@@ -76,6 +78,7 @@ const ViewSingleLogSupp = () => {
                 </div>
             </div>
         </main>
+        <Footer />
     </>
   )
 }

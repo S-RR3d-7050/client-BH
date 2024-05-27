@@ -8,6 +8,8 @@ import Internship from './Internship';
 import { useTranslation } from 'react-i18next';
 import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
 import { use } from 'i18next';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 const Internships = () => {
 
@@ -142,6 +144,7 @@ const Internships = () => {
                 </table>
             </div>
         </div>
+        <Footer />
     </>
   )
 }

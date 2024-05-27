@@ -10,6 +10,8 @@ import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
 import { useTranslation } from 'react-i18next';
 // import insurance from '../../../assets/SocialInsuranceForm.docx';
 import { useParams, useNavigate } from 'react-router-dom';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 const StuApplicationForm = () => {
 
@@ -281,6 +283,7 @@ const StuApplicationForm = () => {
                 </div>
         </section>
         {applicationStatus && <ApplicationSuccessful />}
+        <Footer />
     </>
   )
 }

@@ -7,6 +7,8 @@ import Header from '../../../components/ELEMENTS/Header/Header';
 import HeaderTwo from '../../../components/ELEMENTS/Header/HeaderTwo';
 // import { FaCheck } from 'react-icons/fa'; // Uncomment this line if you use react-icons
 //import { useParams } from 'react-router-dom'
+import SideBar from '../../../components/ELEMENTS/Nav/SideBar';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
 
 
 const ViewAssessment = () => {
@@ -18,6 +20,7 @@ const ViewAssessment = () => {
     //console.log(user.id);
     const id = user.id;
 
+    const [noEval , setNoEval] = useState(true);
     const [t, i18n] = useTranslation('global');
     const [evaluation, setEvaluation] = useState({
         qualityOfStudentInternshipReport: '',
@@ -35,6 +38,9 @@ const ViewAssessment = () => {
                 const response = await fetch('http://localhost:5000/api/v1/evaluations/student/last/'+id); // Adjust the URL as necessary
                 const data = await response.json();
                 setEvaluation(data.message);
+                if(data.message === []){
+                    setNoEval(true);
+                }
             } catch (error) {
                 console.error('Error fetching evaluation:', error);
             }
@@ -79,10 +85,10 @@ const ViewAssessment = () => {
     return (
         <>
             <Navbar />
-            <SupeSidebar />
+            <SideBar />
             <section className={styles.main}>
                 <Header 
-                    text={t('eval.cood')}
+                    text={t('eval.stud')}
                     color={'#003679'}
                     fontSize={'22px'}
                     fontWeight={'600'}
@@ -99,6 +105,9 @@ const ViewAssessment = () => {
                         </tr>
                     </thead>
                     <tbody>
+                    {
+                        noEval ? <tr><td colSpan="5">No evaluation found</td></tr> : null
+                    }
                         {displayEvalFields}
                     </tbody>
                 </table>
@@ -129,6 +138,7 @@ const ViewAssessment = () => {
                     </div>
                 </section>
             </section>
+            <Footer />
         </>
     );
 };

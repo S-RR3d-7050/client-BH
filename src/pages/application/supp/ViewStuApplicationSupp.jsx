@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import SIFDownload from './SIFDownload';
 import SupeSidebar from '../../../components/ELEMENTS/Nav/SupeSidebar';
 import { useParams, useNavigate } from 'react-router-dom';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 const ViewStuApplicationSupp = () => {
 
@@ -161,11 +163,12 @@ const ViewStuApplicationSupp = () => {
             }
             {
                 
-                <SIFDownload cv={url+extractFileName(cv?.chemin)} index={url+extractFileName(app?.chemin)}/>
+                <SIFDownload cv={cv?.url} index={app?.url}/>
                 
             }
            
         </section>
+        <Footer />
     </>
   )
 }

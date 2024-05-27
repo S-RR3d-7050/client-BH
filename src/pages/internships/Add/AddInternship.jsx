@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import CoodSidebar from '../../../components/ELEMENTS/Nav/CoodSidebar';
 import { useNavigate } from 'react-router-dom';
 // import * as fs from 'fs' 
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 const AddInternship = () => {
 
@@ -122,6 +124,7 @@ const AddInternship = () => {
                 </div>
             </section>
         </main>
+        <Footer />
     </>
   )
 }

@@ -3,6 +3,8 @@ import styles from './styles.module.css'
 import Navbar from '../../../components/ELEMENTS/Nav/Navbar';
 import SideBar from '../../../components/ELEMENTS/Nav/SideBar';
 import HeaderTwo from '../../../components/ELEMENTS/Header/HeaderTwo';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 import { useTranslation } from 'react-i18next';
 import Announcement from '../Announcement';
 import { useEffect, useState } from 'react';
@@ -47,27 +49,9 @@ const Announcements = ({ sideBar, navbar }) => {
                  return <Announcement key={index} title={announcement.title} desc={announcement.content} date={announcement.createdAt} />
              })
           }
-          { /*
-            <Announcement title={'Eryka 150'} date={'2024-05-06T18:50:31.000Z'} desc={'Hello eazeazeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaze azeazeazeaze aze azeazeaze'}/>
-            <Announcement title={'Eryka 150'} date={'2024-05-06T18:50:31.000Z'} desc={'Hello eazeazeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaze azeazeazeaze aze azeazeaze'}/>
-            <Announcement title={'Eryka 150'} date={'2024-05-06T18:50:31.000Z'} desc={'Hello eazeazeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaze azeazeazeaze aze azeazeaze'}/>
-            <Announcement title={'Eryka 150'} date={'2024-05-06T18:50:31.000Z'} desc={'Hello eazeazeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaze azeazeazeaze aze azeazeaze'}/>
-            <Announcement title={'Eryka 150'} date={'2024-05-06T18:50:31.000Z'} desc={'Hello eazeazeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaze azeazeazeaze aze azeazeaze'}/>
-            <Announcement title={'Eryka 150'} date={'2024-05-06T18:50:31.000Z'} desc={'Hello eazeazeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaze azeazeazeaze aze azeazeaze'}/>
-            <Announcement title={'Eryka 150'} date={'2024-05-06T18:50:31.000Z'} desc={'Hello eazeazeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaze azeazeazeaze aze azeazeaze'}/>
-
-           
-            <Announcement />
-            <Announcement />
-            <Announcement />
-            <Announcement />
-            <Announcement />
-            <Announcement />
-            <Announcement />
-            <Announcement />
-            */
-          }
+     
           </div>
+          <Footer />
         </main>
     </>
   )

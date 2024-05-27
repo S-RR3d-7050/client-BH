@@ -11,6 +11,7 @@ import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
 import { use } from 'i18next';
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../../hooks/AuthProvider';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
 
 
 
@@ -149,6 +150,7 @@ const StuProfile = () => {
             </div>
         </div>
         {profUpdateSuccess && <ProfUpdateSuccessful />}
+        <Footer />
     </>
   )
 }

@@ -9,6 +9,8 @@ import HeaderTwo from '../../../components/ELEMENTS/Header/HeaderTwo';
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 
 const SuppViewAllEvals = () => {
@@ -223,6 +225,7 @@ const SuppViewAllEvals = () => {
 
 
         </section>
+        <Footer />
     </>
   )
 }

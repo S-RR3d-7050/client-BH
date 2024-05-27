@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom'
 import SupeSidebar from '../../../components/ELEMENTS/Nav/SupeSidebar';
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 export default function ViewStdLogbookSupp() {
 
@@ -89,6 +91,7 @@ export default function ViewStdLogbookSupp() {
             </div>
 
         </section>
+        <Footer />
     </>
   )
 }

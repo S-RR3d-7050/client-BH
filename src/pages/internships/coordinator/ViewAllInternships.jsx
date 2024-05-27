@@ -9,6 +9,8 @@ import HeaderTwo from '../../../components/ELEMENTS/Header/HeaderTwo';
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Paragraph from '../../../components/ELEMENTS/Paragraph/Paragraph';
+import Footer from '../../../components/ELEMENTS/Nav/Footer';
+
 
 
 const ViewAllInternships = () => {
@@ -21,6 +23,10 @@ const ViewAllInternships = () => {
     const [internships, setInternships] = useState([])
     const [noInt, setNoInt] = useState(false);
     const [noInt2, setNoInt2] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('')
+    const [searchResults, setSearchResults] = useState([])
+    const [searchTerm2, setSearchTerm2] = useState('')
+    const [searchResults2, setSearchResults2] = useState([])
 
 
     /*
@@ -36,6 +42,7 @@ const ViewAllInternships = () => {
         const res = await fetch('http://localhost:5000/api/v1/demandes-de-stage/etat/ACCEPTEE')
         const data = await res.json()
         setApplicationsOngoing(data.message)
+        setSearchResults(data.message)
         if (data.message.length === 0) {
             setNoInt(true)
         }
@@ -58,6 +65,7 @@ const ViewAllInternships = () => {
         const res = await fetch('http://localhost:5000/api/v1/sujets-de-stage')
         const data = await res.json()
         setInternships(data.message)
+        setSearchResults2(data.message)
     }
 
     const formatDate = (date) => {
@@ -75,7 +83,13 @@ const ViewAllInternships = () => {
         navigate('/coordinator/view/internship/application/'+rowData.id)
     };
 
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+      };
 
+    const handleSearchChange2 = (e) => {
+        setSearchTerm2(e.target.value);
+      };
     // New Applications
     const displayApplications = applications.map((item, index) =>
         <tr key={index} onClick={() => handleTableRowClick(item)}>
@@ -91,7 +105,7 @@ const ViewAllInternships = () => {
 
 
     // Available Internships
-    const displayAvailableData = internships.map((item, index) => 
+    const displayAvailableData = searchResults2.map((item, index) => 
         <tr key={index}>
                 <td>BH BANK</td>
                 <td>{item.intitule}</td>
@@ -118,7 +132,7 @@ const ViewAllInternships = () => {
 
 
     // ONGOING INTERNSHIPS
-    const displayOngoing = applicationsOngoing.map((item, index) =>
+    const displayOngoing = searchResults.map((item, index) =>
         <tr key={index} onClick={() => handleTableRowClick(item)}>
             <td>{formatFullName(item.stagiaire.firstName , item.stagiaire.lastName)}</td>
             <td>{item.stagiaire.email}</td>
@@ -161,13 +175,21 @@ const ViewAllInternships = () => {
         fetchOngoingApplications()
     }
     , [])
-    /*
 
     useEffect(() => {
-        fetchRejectedApplications()
-    }
-    , [])
-    */
+        setSearchResults2(
+            internships.filter(internship => 
+                internship.intitule.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        ),
+        setSearchResults(
+            applicationsOngoing.filter(application => 
+                application.stagiaire.firstName.toLowerCase().includes(searchTerm2.toLowerCase())
+            )
+        )
+    }, [searchTerm, searchTerm2])
+
+    
 
 
   return (
@@ -212,7 +234,13 @@ const ViewAllInternships = () => {
                 width={'100%'}
                 margin={'1.5rem 1.5rem'}
             />
-            
+                    <input 
+          type="text"
+          placeholder="Search by Int Name"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className={styles.searchBar}
+        />
             <div className={styles.availCont}>
                 <table>
                     <thead>
@@ -242,6 +270,13 @@ const ViewAllInternships = () => {
                 width={'100%'}
                 margin={'1.5rem 1.5rem'}
             />
+                    <input 
+          type="text"
+          placeholder="Search by First Name"
+          value={searchTerm2}
+          onChange={handleSearchChange2}
+          className={styles.searchBar}
+        />
             <div className={styles.availCont}>
                 <table>
                     <thead>
@@ -307,6 +342,7 @@ const ViewAllInternships = () => {
 
 
         </section>
+        <Footer />
     </>
   )
 }

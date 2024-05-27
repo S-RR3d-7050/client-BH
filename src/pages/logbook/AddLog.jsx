@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import CoodSidebar from '../../components/ELEMENTS/Nav/CoodSidebar';
 // import * as fs from 'fs' 
+import Footer from '../../components/ELEMENTS/Nav/Footer';
+
 
 const AddLog = () => {
 
@@ -125,6 +127,7 @@ const AddLog = () => {
                 </div>
             </section>
         </main>
+        <Footer />
     </>
   )
 }

@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import logs from './logs';
 import { date } from 'yup';
 import { use } from 'i18next';
+import Footer from '../../components/ELEMENTS/Nav/Footer';
 
 const Logbook = () => {
 
@@ -72,6 +73,7 @@ const Logbook = () => {
             </main>
 
         </section>
+        <Footer />
     </>
   )
 }
