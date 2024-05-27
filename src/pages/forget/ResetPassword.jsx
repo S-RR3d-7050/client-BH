@@ -4,9 +4,11 @@ import Button from '../../components/ELEMENTS/Button/Button';
 import Image from '../../components/ELEMENTS/Image/Image';
 import HeaderTwo from '../../components/ELEMENTS/Header/HeaderTwo';
 import Paragraph from '../../components/ELEMENTS/Paragraph/Paragraph';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
   const { token } = useParams(); // Token from the URL
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -48,7 +50,7 @@ const ResetPassword = () => {
       ResetPassword(token, password);
       // Redirect to the login page after 2 seconds
        setTimeout(() => {
-         history.push('/login');
+         navigate('/login');
        }, 2000);
       // history.push('/login');
     }
