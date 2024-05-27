@@ -137,3 +137,18 @@ td  {
     background-color: #003679;
 }
 
+
+.noEvalMessage {
+    color: #003679;             /* Match the primary color theme */
+    font-size: 20px;            /* A larger font size for better visibility */
+    font-weight: 600;           /* Bold text for emphasis */
+    text-align: center;         /* Center the text for aesthetics */
+    margin-top: 2rem;           /* Add some margin at the top */
+    padding: 1rem;              /* Padding around the text */
+    border-radius: 10px;        /* Rounded corners to match other elements */
+    background-color: #E5EBF1;  /* A light background to make it stand out */
+    width: 60%;                 /* Restrict width to align with design */
+    margin-left: auto;          /* Centering the block horizontally */
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adding a subtle shadow for depth */
+}
