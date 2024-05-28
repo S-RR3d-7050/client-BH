@@ -87,7 +87,7 @@ const AddLog = () => {
         // wait for 5 then navigate
         setTimeout(() => {
             navigate('/student/tasks');
-        }, 5000)
+        }, 1000)
 
 
     }

@@ -6,10 +6,31 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(localStorage.getItem("user") || "");
   const [token, setToken] = useState(localStorage.getItem("site") || "");
-  
+  const [stag, setStag] = useState(localStorage.getItem("stag") || false);
   const [role, setRole] = useState(localStorage.getItem("role") || "");
   //const [username, setUsername] = useState(localStorage.getItem("user") || "");
   const navigate = useNavigate();
+
+  const stagiaireMiddleware = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/v1/demandes-de-stage/is-stagiaire/${id}` ,{
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+      })
+      const res = await response.json();
+      console.log(res);
+      if (res.message) {
+        console.log(res.message);
+        return res.message;
+      }
+    }catch (err) {
+      console.error(err);
+    }
+  }
+
   const loginAction = async (data) => {
     try {
       const response = await fetch("http://localhost:5000/api/v1/auth/login", {
@@ -42,6 +63,11 @@ const AuthProvider = ({ children }) => {
         // Create a switch statement to route to the respective dashboard
          if (res.data.user.role === "intern") {
            navigate("/student/dashboard");
+           let a = await stagiaireMiddleware(res.data.user.id)
+           setStag(a); 
+          localStorage.setItem("stag", a);
+           console.log('Stagiaire Middleware', a);
+
          } else if (res.data.user.role === "admin") {
            navigate("/coordinator/overview");
         } else if (res.data.user.role === "encadrant") {
@@ -62,9 +88,11 @@ const AuthProvider = ({ children }) => {
     setUser(null);
     setToken("");
     setRole("");
+    setStag(false)
     localStorage.removeItem("site");
     localStorage.removeItem("user");
     localStorage.removeItem("role");
+    localStorage.removeItem("stag");
     //navigate("/student/login");
   };
 
@@ -154,7 +182,7 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  return  <AuthContext.Provider value={{ token, user, loginAction, logOut, registerAction, role, updateAction, updatePass }}>{children}</AuthContext.Provider>;
+  return  <AuthContext.Provider value={{ stag, token, user, loginAction, logOut, registerAction, role, updateAction, updatePass }}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;

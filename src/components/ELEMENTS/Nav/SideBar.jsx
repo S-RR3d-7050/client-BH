@@ -13,14 +13,24 @@ import { IoIosLogOut } from "react-icons/io";
 import { PiSpeakerHighDuotone } from "react-icons/pi"
 import HeaderTwo from '../Header/HeaderTwo'
 import { useAuth } from '../../../hooks/AuthProvider';
+import { useEffect, useState } from 'react';
 
 const SideBar = () => {
 
+  const [stag , setStag] = useState(false)
   const [t, i18n] = useTranslation("global")
   const location = useLocation();
   // console.log(location.pathname);
   const navigate = useNavigate('')
   const auth = useAuth();
+  // get stag from local storage
+  //const stag = localStorage.getItem('stag')
+
+  useEffect(() => {
+    const x = localStorage.getItem('stag')
+    setStag(x)
+  }
+  , [])
 
 
 
@@ -55,9 +65,17 @@ const SideBar = () => {
             <Link to={'/student/dashboard'} className={styles.link}><BiSolidDashboard style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.home")}</Link>
             <Link to={'/student/profile'} className={styles.link}><FaRegUser style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.prof")}</Link>
             <Link to={'/student/internships'} className={styles.link}><FaChalkboardTeacher style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.internships")}</Link>
-            <Link to={'/student/tasks'} className={styles.link}><TbNotes style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.t")}</Link>
+            {
+              stag ? 
+              <Link to={'/student/tasks'} className={styles.link}><TbNotes style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.t")}</Link>
+              : ''
+            }
+            {
+              stag ? 
+              <Link to={'/student/view-assessment'} className={styles.link}><MdInsertChartOutlined style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("eval.eval")}</Link>
+              : ''
+            }
             <Link to={'/student/announcements'} className={styles.link}><PiSpeakerHighDuotone style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("announcements.title")}</Link>
-            <Link to={'/student/view-assessment'} className={styles.link}><MdInsertChartOutlined style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("eval.eval")}</Link>
             <Link to={'/student/settings'} className={styles.link}><CiSettings style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.settings")}</Link>
         </div>
         <button className={styles.logout} onClick={handleLogout}>
