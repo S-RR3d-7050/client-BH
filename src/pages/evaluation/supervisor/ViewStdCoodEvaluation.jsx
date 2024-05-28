@@ -13,6 +13,7 @@ import Footer from '../../../components/ELEMENTS/Nav/Footer';
 
 const ViewStdCoodEvaluation = () => {
     const { id } = useParams();
+    const [noEval, setNoEval] = useState(true);
     const [t, i18n] = useTranslation('global');
     const [evaluation, setEvaluation] = useState({
         qualityOfStudentInternshipReport: '',
@@ -83,46 +84,73 @@ const ViewStdCoodEvaluation = () => {
                     fontWeight={'600'}
                     margin={'1.5rem 1.5rem'}
                 />
-                <table>
-                    <thead>
-                        <tr>
-                            <th style={{width: '60%', textAlign: 'left', fontSize: '20px'}}>{t('eval.crit')}</th>
-                            <th>{t('eval.poor')}</th>
-                            <th>{t('eval.fair')}</th>
-                            <th>{t('eval.good')}</th>
-                            <th>{t('eval.exc')}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {displayEvalFields}
-                    </tbody>
-                </table>
-                <section className={styles.summNcomm}>
-                    <div className={styles.summary}>
-                        <HeaderTwo 
-                            text={t('eval.summary') + ':'}
-                            color={'#003679'}
-                            fontSize={'20px'}
-                            fontWeight={'600'}
-                            margin={'1rem 1rem'}
-                        />
-                        <div className={styles.summaryCont}>
-                            Summary goes in here!
-                        </div>
-                    </div>
-                    <div className={styles.summary}>
-                        <HeaderTwo 
-                            text={t('eval.comm') + ':'}
-                            color={'#003679'}
-                            fontSize={'20px'}
-                            fontWeight={'600'}
-                            margin={'1rem 1rem'}
-                        />
-                        <div className={styles.summaryCont}>
-                            {evaluation.comments}
-                        </div>
-                    </div>
-                </section>
+                             {noEval ? (
+                    <>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style={{ width: '60%', textAlign: 'left', fontSize: '20px' }}>{t('eval.crit')}</th>
+                                    <th>{t('eval.poor')}</th>
+                                    <th>{t('eval.fair')}</th>
+                                    <th>{t('eval.good')}</th>
+                                    <th>{t('eval.exc')}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><p className="noEvalMessage">No evaluation found</p></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </>                ) : (
+                    <>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style={{ width: '60%', textAlign: 'left', fontSize: '20px' }}>{t('eval.crit')}</th>
+                                    <th>{t('eval.poor')}</th>
+                                    <th>{t('eval.fair')}</th>
+                                    <th>{t('eval.good')}</th>
+                                    <th>{t('eval.exc')}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {displayEvalFields}
+                            </tbody>
+                        </table>
+                        <section className={styles.summNcomm}>
+                            <div className={styles.summary}>
+                                <HeaderTwo
+                                    text={t('eval.summary') + ':'}
+                                    color={'#003679'}
+                                    fontSize={'20px'}
+                                    fontWeight={'600'}
+                                    margin={'1rem 1rem'}
+                                />
+                                <div className={styles.summaryCont}>
+                                    Summary goes in here!
+                                </div>
+                            </div>
+                            <div className={styles.summary}>
+                                <HeaderTwo
+                                    text={t('eval.comm') + ':'}
+                                    color={'#003679'}
+                                    fontSize={'20px'}
+                                    fontWeight={'600'}
+                                    margin={'1rem 1rem'}
+                                />
+                                <div className={styles.summaryCont}>
+                                    {evaluation.comments}
+                                </div>
+                            </div>
+                        </section>
+                    </>
+                )}
             </section>
             <Footer />
         </>

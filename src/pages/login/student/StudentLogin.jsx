@@ -89,7 +89,7 @@ const StudentLogin = () => {
             <p>Don't have an account?</p>
             <Link to={'/signup'} style={{textDecoration: 'none', color: '#406A98', fontSize: '16px', fontWeight: '600', marginBottom: '2rem'}}>Sign in</Link>
             <p>Forget your password?</p>
-            <Link to={'/forget-password'} style={{textDecoration: 'none', color: '#406A98', fontSize: '16px', fontWeight: '600', marginBottom: '2rem'}}>Sign in</Link>
+            <Link to={'/forget-password'} style={{textDecoration: 'none', color: '#406A98', fontSize: '16px', fontWeight: '600', marginBottom: '2rem'}}>Reset now</Link>
           </form>  
         </section>
     </main>
