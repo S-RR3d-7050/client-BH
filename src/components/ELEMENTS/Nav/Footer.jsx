@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
             <div className={styles.footerLinks}>
                 <a href="/contact-us" className={styles.footerLink}>{t("footer.contact")}</a>
-                <a href="/about" className={styles.footerLink}>{t("footer.about")}</a>
+                <a href="https://www.bhbank.tn/" target='_blank' className={styles.footerLink}>{t("footer.about")}</a>
             </div>
         </footer>
     );
