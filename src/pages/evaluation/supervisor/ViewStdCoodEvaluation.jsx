@@ -15,6 +15,7 @@ const ViewStdCoodEvaluation = () => {
     const { id } = useParams();
     const [noEval, setNoEval] = useState(true);
     const [t, i18n] = useTranslation('global');
+
     const [evaluation, setEvaluation] = useState({
         qualityOfStudentInternshipReport: '',
         experienceGained: '',
@@ -31,6 +32,8 @@ const ViewStdCoodEvaluation = () => {
                 const response = await fetch('http://localhost:5000/api/v1/evaluations/student/last/'+id); // Adjust the URL as necessary
                 const data = await response.json();
                 setEvaluation(data.message);
+                setNoEval(data.message.length === 0);  // Update noEval based on whether data.message is an empty array
+
             } catch (error) {
                 console.error('Error fetching evaluation:', error);
             }
