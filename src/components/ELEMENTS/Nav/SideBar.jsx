@@ -29,6 +29,9 @@ const SideBar = () => {
   useEffect(() => {
     const x = localStorage.getItem('stag')
     setStag(x)
+    if (x === 'true') {
+      setStag(true)
+    }
   }
   , [])
 
@@ -66,12 +69,12 @@ const SideBar = () => {
             <Link to={'/student/profile'} className={styles.link}><FaRegUser style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.prof")}</Link>
             <Link to={'/student/internships'} className={styles.link}><FaChalkboardTeacher style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.internships")}</Link>
             {
-              stag == true ? 
+              stag  ? 
               <Link to={'/student/tasks'} className={styles.link}><TbNotes style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("sidebar.t")}</Link>
               : ''
             }
             {
-              stag == true ? 
+              stag  ? 
               <Link to={'/student/view-assessment'} className={styles.link}><MdInsertChartOutlined style={{fontSize: '22px', marginRight: '0.5rem'}} /> {t("eval.eval")}</Link>
               : ''
             }
