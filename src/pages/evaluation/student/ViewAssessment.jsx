@@ -57,11 +57,11 @@ const ViewAssessment = () => {
     );
 
     const displayEvalFields = evaluation && [
-        { name: 'Quality of student internship report', value: evaluation.qualityOfStudentInternshipReport },
-        { name: 'Experience gained', value: evaluation.experienceGained },
-        { name: 'Presentation', value: evaluation.presentation },
-        { name: 'Visual presentation aid', value: evaluation.visualPresentationAid },
-        { name: t('eval.overall'), value: evaluation.overall }
+        { name: 'Quality of student internship report', value: evaluation?.qualityOfStudentInternshipReport },
+        { name: 'Experience gained', value: evaluation?.experienceGained },
+        { name: 'Presentation', value: evaluation?.presentation },
+        { name: 'Visual presentation aid', value: evaluation?.visualPresentationAid },
+        { name: t('eval.overall'), value: evaluation?.overall }
     ].map((item, index) => (
         <tr key={index}>
             <td>{item.name + ':'}</td>
@@ -145,7 +145,7 @@ const ViewAssessment = () => {
                                     margin={'1rem 1rem'}
                                 />
                                 <div className={styles.summaryCont}>
-                                    {evaluation.comments}
+                                    {evaluation?.comments}
                                 </div>
                             </div>
                         </section>
